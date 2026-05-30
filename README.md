@@ -4,6 +4,8 @@ Search 13 academic and technical sources in one command.
 
 No API keys needed for most sources. Results ranked by relevance, deduplicated, returned as structured JSON or markdown.
 
+> 🇮🇹 [Versione italiana disponibile in fondo](#versione-italiana)
+
 ---
 
 ## Sources
@@ -13,16 +15,16 @@ No API keys needed for most sources. Results ranked by relevance, deduplicated, 
 | arXiv | Preprints (CS, Physics, Math, AI) | Free |
 | Semantic Scholar | Academic graph, 200M+ papers | Free |
 | OpenAlex | Open academic metadata | Free |
-| BASE | Bielefeld Academic Search | Free |
+| BASE | Bielefeld Academic Search Engine | Free |
 | GitHub | Code repositories | Free (rate-limited) |
 | Unpaywall | Open-access versions of paywalled papers | Free |
 | POLITesi | Politecnico di Milano theses | Free |
-| CNKI (partial) | Chinese academic literature | Free preview |
-| Baidu Scholar (partial) | Chinese research | Free preview |
 | CrossRef | DOI metadata, citations | Free |
 | CORE | Open research papers | Free |
 | PubMed | Biomedical literature | Free |
 | Internet Archive | Historical and digitized texts | Free |
+| CNKI (partial) | Chinese academic literature | Free preview |
+| Baidu Scholar (partial) | Chinese research | Free preview |
 
 ---
 
@@ -56,8 +58,8 @@ python research_agent.py "query" --top 5
   "results": [
     {
       "source": "arxiv",
-      "title": "FlashAttention: Fast Memory-Efficient...",
-      "authors": ["Dao", "Fu", "Ermon", "Rudra", "Ré"],
+      "title": "FlashAttention: Fast Memory-Efficient Exact Attention...",
+      "authors": ["Dao", "Fu", "Ermon", "Rudra", "Re"],
       "year": 2022,
       "url": "https://arxiv.org/abs/2205.14135",
       "abstract": "...",
@@ -74,7 +76,7 @@ python research_agent.py "query" --top 5
 
 ## Architecture
 
-Queries run in parallel (`asyncio` + `aiohttp`). Each source has an independent adapter. Results are deduplicated by title similarity (Levenshtein > 0.85 threshold) before ranking.
+Queries run in parallel (`asyncio` + `aiohttp`). Each source has an independent adapter. Results are deduplicated by title similarity before ranking.
 
 ---
 
@@ -90,5 +92,19 @@ Queries run in parallel (`asyncio` + `aiohttp`). Each source has an independent 
 
 ## Part of
 
-[TITANIUM_OS](https://github.com/Microindustry/TITANIUM_OS) — a personal cognitive operating system built by an industrial craftsman.
+[TITANIUM_OS](https://github.com/Microindustry/TITANIUM_OS) — personal cognitive OS.
 Full source: `NODES/RESEARCH_AGENT/research_agent.py`
+
+---
+
+## Versione italiana
+
+Cerca su 13 fonti accademiche e tecniche con un solo comando.
+
+Nessuna API key necessaria per la maggior parte delle fonti. Risultati ordinati per rilevanza, deduplicati, restituiti come JSON o markdown.
+
+**Fonti principali:** arXiv, Semantic Scholar, OpenAlex, BASE, GitHub, Unpaywall, CrossRef, CORE, PubMed, Internet Archive, POLITesi, CNKI (parziale), Baidu Scholar (parziale).
+
+**Architettura:** le query girano in parallelo (`asyncio` + `aiohttp`). Ogni fonte ha un adattatore indipendente. I risultati vengono deduplicati per similarità del titolo prima del ranking.
+
+Codice sorgente: [TITANIUM_OS](https://github.com/Microindustry/TITANIUM_OS) → `NODES/RESEARCH_AGENT/research_agent.py`
